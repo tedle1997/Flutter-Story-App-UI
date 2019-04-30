@@ -2,31 +2,22 @@ import 'package:flutter/material.dart';
 import 'customIcons.dart';
 import 'data.dart';
 import 'dart:math';
-import 'CompetitionPage.dart';
-
-void main() => runApp(MaterialApp(
-      home: MyApp(),
-      routes: {
-        // When we navigate to the "/second" route, build the SecondScreen Widget
-        '/competition': (context) => CompetitionPage(),
-      },
-      debugShowCheckedModeBanner: false,
-    ));
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => new _MyAppState();
-}
 
 var cardAspectRatio = 12.0 / 16.0;
 var widgetAspectRatio = cardAspectRatio * 1.2;
 
-class _MyAppState extends State<MyApp> {
-  var currentPage = images.length - 1.0;
+class CompetitionPage extends StatefulWidget {
+  @override
+  _CompState createState() => new _CompState();
+
+}
+
+class _CompState extends State<CompetitionPage>{
+  var currentPage = recipes.length - 1.0;
 
   @override
   Widget build(BuildContext context) {
-    PageController controller = PageController(initialPage: images.length - 1);
+    PageController controller = PageController(initialPage: recipes.length - 1);
     controller.addListener(() {
       setState(() {
         currentPage = controller.page;
@@ -37,9 +28,9 @@ class _MyAppState extends State<MyApp> {
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 colors: [
-              Color(0xFF1b1e44),
-              Color(0xFF2d3447),
-            ],
+                  Color(0xFF1b1e44),
+                  Color(0xFF2d3447),
+                ],
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
                 tileMode: TileMode.clamp)),
@@ -95,7 +86,7 @@ class _MyAppState extends State<MyApp> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        
+
                       ],
                     ),
                   ),
@@ -153,13 +144,13 @@ class _MyAppState extends State<MyApp> {
                       CardScrollWidget(currentPage),
                       Positioned.fill(
                         child: PageView.builder(
-                          itemCount: images.length,
+                          itemCount: recipes.length,
                           controller: controller,
                           reverse: true,
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onTap: (){
-                                  Navigator.pushNamed(context, "/competition");
+                                Navigator.pushNamed(context, "/competition");
                               },
                             );
                           },
@@ -265,7 +256,7 @@ class CardScrollWidget extends StatelessWidget {
 
         List<Widget> cardList = new List();
 
-        for (var i = 0; i < images.length; i++) {
+        for (var i = 0; i < recipes.length; i++) {
           var delta = i - currentPage;
           bool isOnRight = delta > 0;
 
@@ -294,7 +285,7 @@ class CardScrollWidget extends StatelessWidget {
                   child: Stack(
                     fit: StackFit.expand,
                     children: <Widget>[
-                      Image.asset(images[i], fit: BoxFit.cover),
+                      Image.asset(recipes[i], fit: BoxFit.cover),
                       Align(
                         alignment: Alignment.bottomLeft,
                         child: Column(

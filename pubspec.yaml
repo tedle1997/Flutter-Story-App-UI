@@ -46,6 +46,9 @@ flutter:
    - assets/image_02.jpg
    - assets/image_03.jpg
    - assets/image_04.jpg
+   - assets/fortnite-outfit-enforcer.jpg
+   - assets/fortnite-outfit-inferno.jpg
+   - assets/fortnite-outfit-malice.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
