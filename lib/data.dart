@@ -9,7 +9,7 @@ List<String> title = [
   "Hounted Ground",
   "Fallen In Love",
   "The Dreaming Moon",
-  "School's Master Ched",
+  "School's Master Chef",
 ];
 
 List<String> recipes = [

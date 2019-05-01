@@ -3,12 +3,16 @@ import 'customIcons.dart';
 import 'data.dart';
 import 'dart:math';
 import 'CompetitionPage.dart';
+import 'Menu.dart';
+import 'ShopPage.dart';
 
 void main() => runApp(MaterialApp(
       home: MyApp(),
       routes: {
         // When we navigate to the "/second" route, build the SecondScreen Widget
+        '/home': (context) => MyApp(),
         '/competition': (context) => CompetitionPage(),
+        '/shop': (context) => ShopPage(),
       },
       debugShowCheckedModeBanner: false,
     ));
@@ -48,43 +52,8 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             title: new Text("Little Nates"),
             backgroundColor: Colors.transparent,
-
           ),
-          drawer: Drawer(
-            child: ListView(
-              // Important: Remove any padding from the ListView.
-              padding: EdgeInsets.zero,
-              children: <Widget>[
-                DrawerHeader(
-                  child: Text('Drawer Header'),
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                  ),
-                ),
-                ListTile(
-                  title: Text('Competition'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                  },
-                ),
-                ListTile(
-                  title: Text('Lesson'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                  },
-                ),
-                ListTile(
-                  title: Text('Shop'),
-                  onTap: () {
-                    // Update the state of the app
-                    // ...
-                  },
-                ),
-              ],
-            ),
-          ),
+          drawer: Menu(),
           body: SafeArea(
             child: SingleChildScrollView(
               child: Column(
@@ -94,9 +63,6 @@ class _MyAppState extends State<MyApp> {
                         left: 12.0, right: 12.0, top: 30.0, bottom: 8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        
-                      ],
                     ),
                   ),
                   Padding(

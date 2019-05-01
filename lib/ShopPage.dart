@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'customIcons.dart';
 import 'data.dart';
 import 'dart:math';
@@ -7,13 +8,13 @@ import 'Menu.dart';
 var cardAspectRatio = 12.0 / 16.0;
 var widgetAspectRatio = cardAspectRatio * 1.2;
 
-class CompetitionPage extends StatefulWidget {
+class ShopPage extends StatefulWidget {
   @override
-  _CompState createState() => new _CompState();
+  _ShopState createState() => new _ShopState();
 
 }
 
-class _CompState extends State<CompetitionPage>{
+class _ShopState extends State<ShopPage>{
   var currentPage = recipes.length - 1.0;
 
   @override
@@ -62,10 +63,10 @@ class _CompState extends State<CompetitionPage>{
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text("School's Master Chef",
+                        Text("Trending",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 29.0,
+                              fontSize: 46.0,
                               fontFamily: "Calibre-Semibold",
                               letterSpacing: 1.0,
                             )),
